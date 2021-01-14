@@ -112,3 +112,7 @@ int main()
 	return 0;
 }
 
+
+//O(ElogE + ElogV)
+//O(ElogE) for sorting
+//O(logV) for find and union operations 
