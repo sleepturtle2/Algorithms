@@ -70,4 +70,4 @@ int main()
 	tarjansAlgo(v, adj);
 		return 0;
 }
-
+//O(V+E)
