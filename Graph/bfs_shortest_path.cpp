@@ -4,6 +4,10 @@ using namespace std;
 #define vvi vector<vi> 
 #define vi vector<int>
 
+
+//Instead of destination if we want to find all pair paths, we simply 
+//traverse the whole graph and then print the steps array 
+
 void bfs(vvi &adj, int V, int source, int dest)
 {
 	vector<int> parent(V,-1), steps(V,-1);
@@ -60,3 +64,4 @@ int main()
 	return 0;
 }
 	
+//O(V+E)
