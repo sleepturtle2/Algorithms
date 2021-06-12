@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include "neg_weighted_directed.h"
+#include "./graph_headers/neg_weighted_directed.h"
 using namespace std;
 
 //For Bellman-Ford, you supply edges, not adjacency list for vertices
