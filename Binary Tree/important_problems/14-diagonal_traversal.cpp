@@ -37,3 +37,11 @@ int main()
   diagonalPrint(root);
   return 0;
 }
+/*
+25 50 70 90
+15 22 24 35 44 66
+10 12 18 31
+4
+
+o(n)
+*/

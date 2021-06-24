@@ -1,3 +1,4 @@
+//https://www.geeksforgeeks.org/construct-binary-tree-string-bracket-representation/
 #include <bits/stdc++.h>
 #include "../00-binary_tree.h"
 using namespace std;
@@ -69,3 +70,4 @@ int main()
   preOrder(root);
   return 0;
 }
+//4 2 3 1 6 5

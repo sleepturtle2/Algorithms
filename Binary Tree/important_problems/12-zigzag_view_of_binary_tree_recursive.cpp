@@ -13,7 +13,7 @@ int treeHeight(node *root)
 
 void zigzagtraversalUtil(node *root, int height, bool left_to_right, vector<int> &ans)
 {
-  if (height <= 1 && root)
+  if (height == 1 && root)
     ans.push_back(root->data);
   else
   {
@@ -57,3 +57,6 @@ int main()
   cout << endl;
   return 0;
 }
+
+//25 50 15 10 22 35 70 90 66 44 31 24 18 12 4
+//o(n)

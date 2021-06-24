@@ -1,3 +1,8 @@
+//https://www.geeksforgeeks.org/diameter-of-a-binary-tree/
+/*
+The diameter of a tree (sometimes called the width) is the number of nodes on the longest path between two end nodes.
+*/
+
 #include <bits/stdc++.h>
 #include "../00-binary_tree.h"
 using namespace std;
@@ -30,3 +35,7 @@ int main()
   cout << diameter(root) << endl;
   return 0;
 }
+/*
+7
+Time Complexity: O(n2)
+*/

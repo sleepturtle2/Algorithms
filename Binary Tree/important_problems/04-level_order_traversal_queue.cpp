@@ -27,3 +27,10 @@ int main()
   node *root = tree();
   printLevelOrder(root);
 }
+
+//25 15 50 10 22 35 70 4 12 18 24 31 44 66 90
+/*
+Time Complexity: O(n) where n is the number of nodes in the binary tree
+Space Complexity: O(n) where n is the number of nodes in the binary tree
+
+*/

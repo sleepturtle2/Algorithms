@@ -1,3 +1,4 @@
+//https://www.geeksforgeeks.org/print-left-view-binary-tree/
 #include <bits/stdc++.h>
 #include "../00-binary_tree.h"
 using namespace std;
@@ -28,3 +29,6 @@ int main()
   leftView(root);
   return 0;
 }
+
+//o(n)
+//25 15 10 4

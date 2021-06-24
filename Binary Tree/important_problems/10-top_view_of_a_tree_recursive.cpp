@@ -1,3 +1,4 @@
+//https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
 #include <bits/stdc++.h>
 #include "../00-binary_tree.h"
 using namespace std;
@@ -19,9 +20,9 @@ void fillmap(node *root, int dist, int level, map<int, pair<int, int>> &map)
 
 void topView(node *root)
 {
-  //map to store the pair of node value and its level with respect to the vertical distance from root
+  //map to store the pair of node value and its level with respect to the horizontal distance from root
   map<int, pair<int, int>> map;
-  //fillmap(root, vertical distance from root, level of node, map)
+  //fillmap(root, vertical distance from root, level of node(vertical distance), map)
   fillmap(root, 0, 0, map);
 
   for (auto it = map.begin(); it != map.end(); it++)

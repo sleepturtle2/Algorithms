@@ -46,3 +46,8 @@ int main()
   node *root = tree();
   printLevelOrder(root);
 }
+//25 15 50 10 22 35 70 4 12 18 24 31 44 66 90
+/*
+Time Complexity: O(n^2) in worst case. For a skewed tree, printGivenLevel() takes O(n) time where n is the number of nodes in the skewed tree. So time complexity of printLevelOrder() is O(n) + O(n-1) + O(n-2) + .. + O(1) which is O(n^2).
+Space Complexity: O(n) in worst case. For a skewed tree, printGivenLevel() uses O(n) space for call stack. For a Balanced tree, the call stack uses O(log n) space, (i.e., the height of the balanced tree).
+*/

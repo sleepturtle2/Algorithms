@@ -2,6 +2,8 @@
 #include "../00-binary_tree.h"
 using namespace std;
 
+//prints in order
+
 void topView(node *root)
 {
   //store nodes and their horizontal distance from the root node
