@@ -1,3 +1,4 @@
+//https://www.geeksforgeeks.org/count-subsequences-product-less-k/
 #include <bits/stdc++.h>
 using namespace std;
 
