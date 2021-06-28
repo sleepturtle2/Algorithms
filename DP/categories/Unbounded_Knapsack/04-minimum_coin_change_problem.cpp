@@ -28,7 +28,7 @@ int tabulation(int coins[], int n, int sum)
   vector<vector<int>> dp(n + 1, vector<int>(sum + 1, INT_MAX));
   for (int i = 0; i <= n; i++)
     dp[i][0] = 0;
-  int mn = INT_MAX;
+  int mn = INT_MAX - 1;
 
   for (int i = 1; i <= n; i++)
   {
