@@ -35,7 +35,7 @@ int maxBridges(struct CityPairs values[], int n)
   //lis of northern coordinates
   for (int i = 1; i < n; i++)
     for (int j = 0; j < i; j++)
-      if (values[i].north >= values[j].north && lis[i] < 1 + lis[j])
+      if (values[i].north > values[j].north && lis[i] < 1 + lis[j])
       {
         lis[i] = 1 + lis[j];
         res = max(res, lis[i]);
@@ -48,6 +48,6 @@ int main()
 {
   struct CityPairs values[] = {{6, 2}, {4, 3}, {2, 6}, {1, 5}};
   int n = 4;
-  cout << "Maximum number of bridges = " << maxBridges(values, n) << endl;
+  cout << "Maximum number of bridges = " << maxBridges(values, n) << endl; // 2 (answer)
 }
 //o(n2)

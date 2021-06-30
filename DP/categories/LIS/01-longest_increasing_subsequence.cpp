@@ -21,8 +21,9 @@ int recursion(int arr[], int i, int n, int prev)
 
 int tabulation(int arr[], int n)
 {
-  if(n==1) return 1;
-  
+  if (n == 1)
+    return 1;
+
   //LIS[i] stores the length of the longest increasing subsequence that ends with arr[i]
   vector<int> LIS(n);
 
@@ -50,13 +51,13 @@ int tabulation(int arr[], int n)
   return max_len;
 }
 
-int tabulation_optimized(int arr[], int n) //fails at test case [7,7,7,7,7,7,7], answer = 1, my output = INT_MIN
+int tabulation_optimized(int arr[], int n) 
 {
 
   int lis[n];
   lis[0] = 1;
 
-  int max_len = INT_MIN;
+  int max_len = 1;
   for (int i = 1; i < n; i++)
   {
 
@@ -73,7 +74,8 @@ int tabulation_optimized(int arr[], int n) //fails at test case [7,7,7,7,7,7,7],
 
 int main()
 {
-  int arr[] = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
+  //int arr[] = {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
+  int arr[] = {2, 2, 4, 3, 5};
   int n = sizeof(arr) / sizeof(arr[0]);
 
   cout << recursion(arr, 0, n, INT_MIN) << endl;

@@ -20,11 +20,11 @@ int numOfParenthesis(string s, int i, int j, bool isTrue, vector<vector<vector<i
     return dp[i][j][isTrue];
 
   int ans = 0;
-  for (int k = i + 1; k <= j; k += 2)
+  for (int k = i + 1; k <= j; k += 2) //k starts at i+1 because k can only be an operator, skips 2 places for the same reason
   {
     int leftF, leftT, rightT, rightF;
 
-    if (dp[i][k - 1][1] == -1)
+    if (dp[i][k - 1][1] == -1) //k is an operator, so i->k-1
     {
       leftT = numOfParenthesis(s, i, k - 1, 1, dp);
     }

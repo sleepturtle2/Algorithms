@@ -8,11 +8,13 @@ void findLIS(int arr[], int n)
 {
   // `LIS[i]` stores the longest increasing subsequence of subarray
   // `arr[0…i]` that ends with `arr[i]`
-  vector<int> LIS[n];
+  vector<vector<int>> LIS(n);
 
   // `LIS[0]` denotes the longest increasing subsequence ending at `arr[0]`
   LIS[0].push_back(arr[0]);
 
+  int LIS_index = 0;
+  int LIS_length = 0;
   // start from the second array element
   for (int i = 1; i < n; i++)
   {
@@ -30,6 +32,8 @@ void findLIS(int arr[], int n)
 
     // include `arr[i]` in `LIS[i]`
     LIS[i].push_back(arr[i]);
+    if (LIS[i].size() > LIS_length)
+      LIS_index = i;
   }
 
   // uncomment the following code to print contents of `LIS`
@@ -43,17 +47,9 @@ void findLIS(int arr[], int n)
     } */
 
   // `j` will store the index of LIS
-  int j;
-  for (int i = 0; i < n; i++)
-  {
-    if (LIS[j].size() < LIS[i].size())
-    {
-      j = i;
-    }
-  }
 
   // print LIS
-  for (int i : LIS[j])
+  for (int i : LIS[LIS_index])
   {
     cout << i << " ";
   }

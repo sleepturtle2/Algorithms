@@ -84,7 +84,7 @@ int maxStackHeight(Box arr[], int n)
   int msh[n];
   for (int i = 0; i < n; i++)
     msh[i] = rot[i].h;
-
+  int max_msh = 0;
   /* Compute optimized msh values in bottom up manner */
   for (int i = 1; i < n; i++)
     for (int j = 0; j < i; j++)
@@ -93,15 +93,11 @@ int maxStackHeight(Box arr[], int n)
           msh[i] < msh[j] + rot[i].h)
       {
         msh[i] = msh[j] + rot[i].h;
+        max_msh = max(max_msh, msh[i]);
       }
 
-  /* Pick maximum of all msh values */
-  int max = -1;
-  for (int i = 0; i < n; i++)
-    if (max < msh[i])
-      max = msh[i];
 
-  return max;
+  return max_msh;
 }
 
 /* Driver program to test above function */

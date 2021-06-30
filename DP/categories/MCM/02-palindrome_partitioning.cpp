@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 //find min number of partitions in a string to make each string a palindrome
-//eg nitin. ans = 2 -> n, iti, n
+//eg nitin. ans = 1 -> nitin, nitink = 2 -> nitin, k
 
 bool isPalindrome(string s, int start, int end)
 {

@@ -30,11 +30,20 @@ int maxChainLength(Pair arr[], int n)
       }
   return res;
 }
+bool compare(struct Pair a, struct Pair b)
+{
+
+  if (a.a == b.a)
+    return a.b < b.a;
+
+  return a.a < b.a;
+}
 
 int main()
 {
-  Pair arr[] = {{5, 24}, {15, 25}, {27, 40}, {50, 60}};
+  Pair arr[] = {{27, 40}, {5, 24}, {15, 25}, {50, 60}, {39, 60}};
   int n = sizeof(arr) / sizeof(arr[0]);
+  sort(arr, arr + n, compare); // is this an essential step? (i think so)
   cout << maxChainLength(arr, n) << endl;
 }
 //o(n2)
