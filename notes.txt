@@ -1,0 +1,4 @@
+significance of 10^9+7:
+-> used for modulo operations to avoid int overflows
+-> first 10-digit prime number, easy to remember
+-> technically any prime under 2^30 should work. we fit the upper limit according to our problem.
