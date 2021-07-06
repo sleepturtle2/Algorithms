@@ -75,4 +75,4 @@ int main()
   return 0;
 }
 /*
-Time Complexity: The above solution does a traversal of both trees. So time complexity is O(min(m,n)*2) or O(min(m,n)) where m and n are number of nodes in given tree*/
+Time Complexity: The above solution does a traversal of both trees. So time complexity is O(min(m,n)*2) or O(min(m,n)) where m and n are number of nodes in given trees*/
