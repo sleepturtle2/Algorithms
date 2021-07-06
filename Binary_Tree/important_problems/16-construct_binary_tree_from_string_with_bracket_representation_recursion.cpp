@@ -13,7 +13,7 @@ void preOrder(node *root)
   preOrder(root->right);
 }
 
-// Below function accepts sttring and a pointer variable as
+// Below function accepts string and a pointer variable as
 // an argument
 // and draw the tree. Returns the root of the tree
 node *constructTree(string s, int *start)

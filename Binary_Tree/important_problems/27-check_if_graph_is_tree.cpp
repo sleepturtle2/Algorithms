@@ -7,7 +7,7 @@ using namespace std;
 class Graph
 {
   int V;          // No. of vertices
-  list<int> *adj; // Pointer to an array for adjacency lists
+  list<int> *adj; //  array for adjacency lists
   bool isCyclicUtil(int v, bool visited[], int parent);
 
 public:

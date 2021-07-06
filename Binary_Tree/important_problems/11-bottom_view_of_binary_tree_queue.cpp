@@ -10,7 +10,7 @@ void bottomView(node *root)
   int h_dist = 0; //horizontal distance
 
   map<int, int> Map;       //(horizontal distance, node data)
-  queue<node *> queue;     //store level order traversale
+  queue<node *> queue;     //store level order traversal
   map<node *, int> hd_map; //store the h_dist of each node
 
   hd_map[root] = h_dist;
