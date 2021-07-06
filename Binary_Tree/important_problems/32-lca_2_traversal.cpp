@@ -60,3 +60,4 @@ int main()
   cout << "nLCA(2, 4) = " << findLCA(root, 2, 4) << endl;
   return 0;
 }
+//o(n)

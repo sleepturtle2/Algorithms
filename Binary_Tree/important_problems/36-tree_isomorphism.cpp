@@ -1,7 +1,8 @@
 // A C++ program to check if two given trees are isomorphic
 #include <iostream>
 using namespace std;
-
+/*
+Write a function to detect if two trees are isomorphic. Two trees are called isomorphic if one of them can be obtained from other by a series of flips, i.e. by swapping left and right children of a number of nodes. Any number of nodes at any level can have their children swapped. Two empty trees are isomorphic.*/
 /* A binary tree node has data, pointer to left and right children */
 struct node
 {
@@ -73,3 +74,5 @@ int main()
 
   return 0;
 }
+/*
+Time Complexity: The above solution does a traversal of both trees. So time complexity is O(min(m,n)*2) or O(min(m,n)) where m and n are number of nodes in given tree*/

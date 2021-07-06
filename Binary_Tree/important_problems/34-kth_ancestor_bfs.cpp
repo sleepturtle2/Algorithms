@@ -44,7 +44,9 @@ void generateArray(Node *root, int ancestors[])
 int kthAncestor(Node *root, int n, int k, int node)
 {
   // create array to store 1st ancestors
-  int ancestors[n + 1] = {0};
+  int ancestors[n + 1];
+  for (int i = 0; i <= n; i++)
+    ancestors[i] = 0;
 
   // generate first ancestor array
   generateArray(root, ancestors);
@@ -92,3 +94,4 @@ int main()
   cout << kthAncestor(root, 5, k, node);
   return 0;
 }
+//o(n), o(n)

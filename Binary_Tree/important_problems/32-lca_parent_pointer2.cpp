@@ -1,12 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-/*
-Below are steps to find LCA.
 
-Create an empty hash table.
-Insert n1 and all of its ancestors in hash table.
-Check if n2 or any of its ancestors exist in hash table, if yes return the first existing ancestor.
-Below is the implementation of above steps.*/
 // A Tree Node
 struct Node
 {
@@ -24,7 +18,7 @@ Node *newNode(int item)
 }
 
 /* A utility function to insert a new node with
-   given key in Binary Search Tree */
+given key in Binary Search Tree */
 Node *insert(Node *node, int key)
 {
   /* If the tree is empty, return a new node */
@@ -47,25 +41,45 @@ Node *insert(Node *node, int key)
   return node;
 }
 
+// A utility function to find depth of a node
+// (distance of it from root)
+int depth(Node *node)
+{
+  int d = -1;
+  while (node)
+  {
+    ++d;
+    node = node->parent;
+  }
+  return d;
+}
+
 // To find LCA of nodes n1 and n2 in Binary Tree
 Node *LCA(Node *n1, Node *n2)
 {
-  // Creata a map to store ancestors of n1
-  map<Node *, bool> ancestors;
+  // Find depths of two nodes and differences
+  int d1 = depth(n1), d2 = depth(n2);
+  int diff = d1 - d2;
 
-  // Insert n1 and all its ancestors in map
-  while (n1 != NULL)
+  // If n2 is deeper, swap n1 and n2
+  if (diff < 0)
   {
-    ancestors[n1] = true;
-    n1 = n1->parent;
+    Node *temp = n1;
+    n1 = n2;
+    n2 = temp;
+    diff = -diff;
   }
 
-  // Check if n2 or any of its ancestors is in
-  // map.
-  while (n2 != NULL)
+  // Move n1 up until it reaches the same level as n2
+  while (diff--)
+    n1 = n1->parent;
+
+  // Now n1 and n2 are at same levels
+  while (n1 && n2)
   {
-    if (ancestors.find(n2) != ancestors.end())
-      return n2;
+    if (n1 == n2)
+      return n1;
+    n1 = n1->parent;
     n2 = n2->parent;
   }
 
@@ -86,17 +100,14 @@ int main(void)
   root = insert(root, 14);
 
   Node *n1 = root->left->right->left;
-  Node *n2 = root->left;
-  Node *lca = LCA(n1, n2);
+  Node *n2 = root->right;
 
+  Node *lca = LCA(n1, n2);
   printf("LCA of %d and %d is %d \n", n1->key, n2->key, lca->key);
 
   return 0;
 }
 /*
-Note : The above implementation uses insert of Binary Search Tree to create a Binary Tree, but the function LCA is for any Binary Tree (not necessarily a Binary Search Tree).
-
-
-Time Complexity : O(h) where h is height of Binary Tree if we use hash table to implement the solution (Note that the above solution uses map which takes O(Log h) time to insert and find). So the time complexity of above implementation is O(h Log h).
-
-Auxiliary Space : O(h)*/
+A O(h) time and O(1) Extra Space Solution:
+The above solution requires extra space because we need to use a hash table to store visited ancestors. We can solve the problem in O(1) extra space using following fact : If both nodes are at same level and if we traverse up using parent pointers of both nodes, the first common node in the path to root is lca.
+The idea is to find depths of given nodes and move up the deeper node pointer by the difference between depths. Once both nodes reach same level, traverse them up and return the first common node.*/
