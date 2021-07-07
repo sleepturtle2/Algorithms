@@ -40,7 +40,13 @@ void findMaxProfit(vector<Job> arr)
     L[i].push_back(arr[i]);
     sum[i] += arr[i].profit;
   }
-
+  // int k = 0;
+  // for (vector<Job> i : L)
+  // {
+  //   cout << k++ << ": " << endl;
+  //   for (Job j : i)
+  //     cout << j.start << " " << j.finish << " " << j.profit << endl;
+  // }
   vector<Job> maxChain;
   int max = 0;
   // find one with max profit
