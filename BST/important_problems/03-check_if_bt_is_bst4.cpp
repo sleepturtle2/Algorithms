@@ -3,7 +3,7 @@
 2) This method assumes that there are no duplicate values in the tree
 3) Check if the temp array is sorted in ascending order, if it is, then the tree is BST.
 Time Complexity: O(n)
-We can avoid the use of a Auxiliary Array. While doing In-Order traversal, we can keep track of previously visited node. If the value of the currently visited node is less than the previous value, then tree is not BST. Thanks to ygos for this space optimization. */
+We can avoid the use of a Auxiliary Array. While doing In-Order traversal, we can keep track of previously visited node. If the value of the currently visited node is less than the previous value, then tree is not BST.. */
 
 /*
 bool isBST(node* root)

@@ -10,7 +10,8 @@ While the stack is not empty, perform following steps :
   If the left child of the first tree doesn’t exist, append the left child of the second tree to the current node of the first tree
   Do same for right child pair as well.
   If both the current nodes are NULL, continue with popping the next nodes from the stack.
-Return root of updated Tree*/
+Return root of updated Tree
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

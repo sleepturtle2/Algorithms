@@ -1,10 +1,13 @@
 /*
-Traverse the tree in Preorder fashion
-Check if both the tree nodes are NULL
-If not, then update the value
-Recur for left subtrees
-Recur for right subtrees
-Return root of updated Tree*/
+Given two binary trees. We need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the non-null node will be used as the node of new tree.
+
+Recursive Algorithm:
+  Traverse the tree in Preorder fashion
+  Check if both the tree nodes are NULL
+    If not, then update the value
+  Recur for left subtrees
+  Recur for right subtrees
+  Return root of updated Tree*/
 #include <bits/stdc++.h>
 using namespace std;
 

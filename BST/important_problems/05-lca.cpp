@@ -70,7 +70,9 @@ int main()
   getchar();
   return 0;
 }
-/*Time Complexity: O(h).
+/*
+Time Complexity: O(h).
 The time Complexity of the above solution is O(h), where h is the height of the tree.
 Space Complexity: O(h).
-If recursive stack space is ignored, the space complexity of the above solution is constant.*/
+If recursive stack space is ignored, the space complexity of the above solution is constant.
+*/

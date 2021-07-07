@@ -1,5 +1,6 @@
 /*
-The idea is to use the fact the leftmost element (first in inorder traversal) of the tree is the least element in a BST. So we compute this value for both the trees and print the smaller one, now we delete this printed element from the respective tree and update it. Then we recursively call our function with the updated tree. We do this until one of the trees is exhausted. Now we simply print the inorder traversal of the other tree.*/
+The idea is to use the fact the leftmost element (first in inorder traversal) of the tree is the least element in a BST. So we compute this value for both the trees and print the smaller one, now we delete this printed element from the respective tree and update it. Then we recursively call our function with the updated tree. We do this until one of the trees is exhausted. Now we simply print the inorder traversal of the other tree.
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

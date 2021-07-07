@@ -1,4 +1,7 @@
-/*Traverse the given tree in reverse inorder traversal and keep track of previously visited node. When a node is being visited, assign a previously visited node as next.*/
+/*
+Given a Binary Tree, write a function to populate the next pointer for all nodes. The next pointer for every node should be set to point to inorder successor.
+
+Traverse the given tree in reverse inorder traversal and keep track of previously visited node. When a node is being visited, assign a previously visited node as next.*/
 #include <bits/stdc++.h>
 using namespace std;
 

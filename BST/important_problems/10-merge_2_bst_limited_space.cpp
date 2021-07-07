@@ -1,6 +1,6 @@
 /*
 A similar question has been discussed earlier. Let us first discuss the already discussed methods of the previous post which was for Balanced BSTs. Method 1 can be applied here also, but the time complexity will be O(n^2) in the worst case. Method 2 can also be applied here, but the extra space required will be O(n) which violates the constraint given in this question. Method 3 can be applied here but step 3 of method 3 can’t be done in O(n) for an unbalanced BST.
-Thanks to Kumar for suggesting the following solution.
+
 The idea is to use iterative inorder traversal. We use two auxiliary stacks for two BSTs. Since we need to print the elements in the sorted form, whenever we get a smaller element from any of the trees, we print it. If the element is greater, then we push it back to stack for the next iteration. */
 
 #include <bits/stdc++.h>
