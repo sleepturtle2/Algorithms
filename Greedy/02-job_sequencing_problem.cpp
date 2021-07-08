@@ -1,101 +1,93 @@
 /*
 Given an array of jobs where every job has a deadline and associated profit if the job is finished before the deadline. It is also given that every job takes a single unit of time, so the minimum possible deadline for any job is 1. How to maximize total profit if only one job can be scheduled at a time.
 
-Examples:
 
-Input: Four Jobs with following
-deadlines and profits
-JobID  Deadline  Profit
-  a      4        20
-  b      1        10
-  c      1        40
-  d      1        30
-Output: Following is maximum
-profit sequence of jobs
-        c, a
-
-
-Input:  Five Jobs with following
-deadlines and profits
-JobID   Deadline  Profit
-  a       2        100
-  b       1        19
-  c       2        27
-  d       1        25
-  e       3        15
-Output: Following is maximum
-profit sequence of jobs
-        c, a, e
 A Simple Solution is to generate all subsets of a given set of jobs and check individual subsets for the feasibility of jobs in that subset. Keep track of maximum profit among all feasible subsets. The time complexity of this solution is exponential.
-This is a standard Greedy Algorithm problem. */
+This is a standard Greedy Algorithm problem.
+Following is the algorithm.
+
+1) Sort all jobs in decreasing order of profit.
+2) Iterate on jobs in decreasing order of profit.For each job , do the following :
+
+
+
+For each job find an empty time slot from deadline to 0. If found empty slot put the job in the slot and mark this slot filled. */
 #include <iostream>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
-// A structure to represent a job
+// Stores the maximum deadline that can be associated with a job
+#define T 15
+
+// Data structure to store job details. Each job has an identifier,
+// a deadline, and profit associated with it.
 struct Job
 {
-  char id;    // Job Id
-  int dead;   // Deadline of job
-  int profit; // Profit if job is over before or on deadline
+  int taskID, deadline, profit;
 };
 
-// This function is used for sorting all jobs according to profit
-bool comparison(Job a, Job b)
+// Function to schedule jobs to maximize profit
+void scheduleJobs(vector<Job> jobs) // no-ref, no-const
 {
-  return (a.profit > b.profit);
-}
+  // stores the maximum profit that can be earned by scheduling jobs
+  int profit = 0;
 
-// Returns minimum number of platforms reqquired
-void printJobScheduling(Job arr[], int n)
-{
-  // Sort all jobs according to decreasing order of prfit
-  sort(arr, arr + n, comparison);
+  // array to store used and unused slots info
+  vector<int> slot(T, -1);
 
-  int result[n]; // To store result (Sequence of jobs)
-  bool slot[n];  // To keep track of free time slots
+  // arrange the jobs in decreasing order of their profits
+  sort(jobs.begin(), jobs.end(),
+       [](Job &a, Job &b)
+       {
+         return a.profit > b.profit; // using C++11 lambda comparison
+       });
 
-  // Initialize all slots to be free
-  for (int i = 0; i < n; i++)
-    slot[i] = false;
-
-  // Iterate through all given jobs
-  for (int i = 0; i < n; i++)
+  // consider each job in decreasing order of their profits
+  for (const Job &job : jobs)
   {
-    // Find a free slot for this job (Note that we start
-    // from the last possible slot)
-    for (int j = min(n, arr[i].dead) - 1; j >= 0; j--)
+    // search for the next free slot and map the task to that slot
+    for (int j = job.deadline - 1; j >= 0; j--)
     {
-      // Free slot found
-      if (slot[j] == false)
+      if (j < T && slot[j] == -1)
       {
-        result[j] = i;  // Add this job to result
-        slot[j] = true; // Make this slot occupied
+        slot[j] = job.taskID;
+        profit += job.profit;
         break;
       }
     }
   }
 
-  // Print the result
-  for (int i = 0; i < n; i++)
-    if (slot[i])
-      cout << arr[result[i]].id << " ";
+  // print the scheduled jobs
+  cout << "The scheduled jobs are ";
+  for (int i = 0; i < T; i++)
+  {
+    if (slot[i] != -1)
+    {
+      cout << slot[i] << " ";
+    }
+  }
+
+  // print the total profit that can be earned
+  cout << "\nThe total profit earned is " << profit;
 }
 
-// Driver code
 int main()
 {
-  Job arr[] = {{'a', 2, 100}, {'b', 1, 19}, {'c', 2, 27}, {'d', 1, 25}, {'e', 3, 15}};
-  int n = sizeof(arr) / sizeof(arr[0]);
-  cout << "Following is maximum profit sequence of jobs \n";
+  // vector of given jobs. Each job has an identifier, a deadline, and
+  // profit associated with it
+  vector<Job> jobs =
+      {
+          {1, 9, 15}, {2, 2, 2}, {3, 5, 18}, {4, 7, 1}, {5, 4, 25}, {6, 2, 20}, {7, 5, 8}, {8, 7, 10}, {9, 4, 12}, {10, 3, 5}};
 
-  // Function call
-  printJobScheduling(arr, n);
+  // schedule jobs and calculate the maximum profit
+  scheduleJobs(jobs);
+
   return 0;
 }
 /*
 Output
-Following is maximum profit sequence of jobs
-c a e
-The Time Complexity of the above solution is O(n2). It can be optimized using Disjoint Set Data Structure. Please refer to the below post for details.
+The scheduled jobs are 7 6 9 5 3 4 8 1
+The total profit earned is 109
+The Time Complexity of the above solution is O(n2). It can be optimized using Disjoint Set Data Structure.
 */
