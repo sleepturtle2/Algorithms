@@ -10,10 +10,3 @@ The contents are recursively listed in [ls-R](./ls-R.txt) file
 
 #### Contribution 
 This repository is contribution friendly! If you'd like to add or improve an algorithm, your contribution is welcome! Send me a pull request to review
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
