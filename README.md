@@ -8,7 +8,7 @@ Algorithms and data structures are fundamental to efficient code and good softwa
 ### Contents
 The contents are recursively listed in [ls-R](./ls-R.txt) file
 
-### Running an Algorithm implementation in C++
+### Running an Algorithm implementation 
 Assuming the repo is locally cloned, 
 1. Install g++ (one time)
   Debian: 
