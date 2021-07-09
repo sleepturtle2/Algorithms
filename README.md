@@ -1,5 +1,5 @@
 ```diff
-WORK IN PROGRESS
+- WORK IN PROGRESS
 ```
 
 # Assorted Problems on DSA 
