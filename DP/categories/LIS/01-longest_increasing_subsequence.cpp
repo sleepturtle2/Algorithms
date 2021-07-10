@@ -12,7 +12,7 @@ int recursion(int arr[], int i, int n, int prev)
   int excl = recursion(arr, i + 1, n, prev);
 
   //case 2: include the current element if it is greater than the previous element in LIS
-  int incl = 0;
+  int incl;
   if (arr[i] > prev)
     incl = 1 + recursion(arr, i + 1, n, arr[i]);
 
@@ -51,7 +51,7 @@ int tabulation(int arr[], int n)
   return max_len;
 }
 
-int tabulation_optimized(int arr[], int n) 
+int tabulation2(int arr[], int n) 
 {
 
   int lis[n];
@@ -82,5 +82,5 @@ int main()
 
   cout << tabulation(arr, n) << endl;
 
-  cout << tabulation_optimized(arr, n) << endl;
+  cout << tabulation2(arr, n) << endl;
 }
