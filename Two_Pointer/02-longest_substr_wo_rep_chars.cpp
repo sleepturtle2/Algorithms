@@ -69,15 +69,15 @@ int main()
   string s = "abcabcbb";
   cout << sliding_window(s) << endl;
   /*O(2n), 2 traversals
-  Space complexity : O(min(m, n))O(min(m,n)). Same as the previous approach. We need O(k)O(k) space for the sliding window, where kk is the size of the Set. The size of the Set is upper bounded by the size of the string nn and the size of the charset/alphabet mm.*/
+  Space complexity : O(min(m, n)). Same as the previous approach. We need O(k) space for the sliding window, where kk is the size of the Set. The size of the Set is upper bounded by the size of the string nn and the size of the charset/alphabet m.*/
 
   cout << sliding_window_optimized(s) << endl; //o(n), 1 traversal
   /*
   Complexity Analysis
 
-Time complexity : O(n)O(n). Index jj will iterate nn times.
+Time complexity : O(n). Index j will iterate n times.
 
-Space complexity (HashMap) : O(min(m, n))O(min(m,n)). Same as the previous approach.
+Space complexity (HashMap) : O(min(m, n)). Same as the previous approach.
 
-Space complexity (Table): O(m)O(m). mm is the size of the charset.*/
+Space complexity (Table): O(m). m is the size of the charset.*/
 }
