@@ -17,27 +17,29 @@ string minRemove(string s)
 {
   string s1;
   int open = 0;
-  //removes all unbalanced ')'
-  for (char c : s)
+
+  //remove unbalanced )
+  for (int i = 0; i < s.size(); i++)
   {
-    if (c == '(')
+    if (s[i] == '(')
       open++;
-    else if (c == ')')
+    else if (s[i] == ')')
     {
-      if (open == 0)
-        continue; //unbalanced
+      if (open == 0) //no preceding '('
+        continue;    //dont include the ')'
       open--;
     }
-    s1 += c;
+    s1 += s[i];
   }
 
-  //guaranteed to not have unbalanced ')'
-  //remove unbalanced '('
-  string s2;
+  string s2; //holds answer
+  //here it is guaranteed that there is no unbalanced )
+  //so the value of open = no of unbalanced (
+  //remove 'open' no of (
   for (int i = s1.size() - 1; i >= 0; i--)
   {
-    if (s1[i] == '(' && open-- > 0)
-      continue; //unbalanced
+    if (s1[i] == '(' and open-- > 0) //means there are more unbalanced (, so skip adding it
+      continue;
     s2 = s1[i] + s2;
   }
   return s2;
