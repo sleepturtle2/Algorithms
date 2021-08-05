@@ -18,7 +18,7 @@ int diameter(node *root, int &height)
   rdiameter = diameter(root->right, rheight);
 
   height = max(lheight, rheight) + 1;
-  int ans = max(lheight + rheight + 1, max(ldiameter, rdiameter));
+  int ans = max(lheight + rheight , max(ldiameter, rdiameter));
   cout << "node:" << root->data << ", lheight:" << lheight << ", rheight:" << rheight << ", height:" << height << ", ldiameter:" << ldiameter << ", rdiameter:" << rdiameter << ",ans:" << ans << endl;
   return ans;
 }
