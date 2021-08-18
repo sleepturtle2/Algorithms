@@ -1,3 +1,5 @@
+//practice link
+//https://practice.geeksforgeeks.org/problems/minimum-sum-partition3317/1
 #include <bits/stdc++.h>
 using namespace std;
 int arrSum(int arr[], int n)

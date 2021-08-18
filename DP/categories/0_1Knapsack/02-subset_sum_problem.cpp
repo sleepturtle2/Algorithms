@@ -1,3 +1,6 @@
+//practice link
+//https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1/
+
 #include <bits/stdc++.h>
 using namespace std;
 bool memoization(int arr[], int n, int sum, vector<vector<int>> &dp)
