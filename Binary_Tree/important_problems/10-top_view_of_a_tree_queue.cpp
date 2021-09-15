@@ -1,3 +1,6 @@
+//practice link
+//https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1
+
 #include <bits/stdc++.h>
 #include "../00-binary_tree.h"
 using namespace std;
@@ -25,7 +28,7 @@ void topView(node *root)
     if (root->left)
     {
       hd_map[root->left] = h_dist - 1;
-      queue.push(root->right);
+      queue.push(root->left);
     }
     if (root->right)
     {

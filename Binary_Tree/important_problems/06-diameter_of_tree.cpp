@@ -2,6 +2,8 @@
 /*
 The diameter of a tree (sometimes called the width) is the number of nodes on the longest path between two end nodes.
 */
+//practice link
+//https://practice.geeksforgeeks.org/problems/diameter-of-binary-tree/1
 
 #include <bits/stdc++.h>
 #include "../00-binary_tree.h"

@@ -1,3 +1,6 @@
+//practice
+//https://practice.geeksforgeeks.org/problems/diameter-of-binary-tree/1
+
 #include <bits/stdc++.h>
 #include "../00-binary_tree.h"
 using namespace std;
@@ -18,8 +21,8 @@ int diameter(node *root, int &height)
   rdiameter = diameter(root->right, rheight);
 
   height = max(lheight, rheight) + 1;
-  int ans = max(lheight + rheight , max(ldiameter, rdiameter));
-  cout << "node:" << root->data << ", lheight:" << lheight << ", rheight:" << rheight << ", height:" << height << ", ldiameter:" << ldiameter << ", rdiameter:" << rdiameter << ",ans:" << ans << endl;
+  int ans = max(lheight + rheight, max(ldiameter, rdiameter));
+  // cout << "node:" << root->data << ", lheight:" << lheight << ", rheight:" << rheight << ", height:" << height << ", ldiameter:" << ldiameter << ", rdiameter:" << rdiameter << ",ans:" << ans << endl;
   return ans;
 }
 
