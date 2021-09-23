@@ -1,6 +1,10 @@
 //based on kahn's algorithm 
 
-//https://leetcode.com/problems/course-schedule/
+
+//https://www.geeksforgeeks.org/find-whether-it-is-possible-to-finish-all-tasks-or-not-from-given-dependencies/
+//https : //leetcode.com/problems/course-schedule/
+
+// find whether it is possible to finish all tasks or not from given dependencies
 
 bool canFinish(int n, vector<vector<int>>& pre) {
         vector<vector<int>>adj(n); 
