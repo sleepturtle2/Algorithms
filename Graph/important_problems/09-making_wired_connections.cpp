@@ -1,6 +1,8 @@
 //https://www.geeksforgeeks.org/minimize-count-of-connections-required-to-be-rearranged-to-make-all-the-computers-connected/
 
-#include <bits/stdc++.h>
+#include <vector>
+#include <iostream>
+#include <unordered_map>
 using namespace std;
 
 void DFS(unordered_map<int, vector<int>> &adj, int node, vector<bool> &visited)
