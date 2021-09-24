@@ -1,3 +1,11 @@
+/*
+Note: 
+A faster solution would be to simply check if there is a cycle in the graph using the dfs
+refer to the problem, how to detect a cycle in a directed graph using dfs. 
+if true, then topo sort not possible 
+else possible
+*/
+
 //https://www.geeksforgeeks.org/find-whether-it-is-possible-to-finish-all-tasks-or-not-from-given-dependencies/
 //https : //leetcode.com/problems/course-schedule/
 

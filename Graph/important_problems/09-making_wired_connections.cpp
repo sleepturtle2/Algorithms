@@ -1,8 +1,18 @@
 //https://www.geeksforgeeks.org/minimize-count-of-connections-required-to-be-rearranged-to-make-all-the-computers-connected/
+/*
+There are n computers numbered from 0 to n-1 connected by ethernet cables connections forming a network where connections[i] = [a, b] represents a connection between computers a and b. Any computer can reach any other computer directly or indirectly through the network.
 
-#include <vector>
-#include <iostream>
-#include <unordered_map>
+Given an initial computer network connections. You can extract certain cables between two directly connected computers, and place them between any pair of disconnected computers to make them directly connected. Return the minimum number of times you need to do this in order to make all the computers connected. If it's not possible, return -1. 
+
+
+Intuition: 
+We know that there are n-1 edges in an MST. Now lets assume there are n-1 edges but the no of components is greater, ie, there are redundant edges in the same component 
+but not enough to connect all components. Therefore, if edges >= n-1, the number of edges needed from that component, or all other components combined must be Components-1 (To
+connect all components). 
+
+Now if edges are a lot more than that, the redundant edges must be -> ( edges - ((N-1) - (Components - 1)) ) (Think about this!) 
+*/
+#include <bits/stdc++.h>
 using namespace std;
 
 void DFS(unordered_map<int, vector<int>> &adj, int node, vector<bool> &visited)
