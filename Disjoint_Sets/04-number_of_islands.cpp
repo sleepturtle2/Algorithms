@@ -1,16 +1,17 @@
 //https://www.geeksforgeeks.org/find-the-number-of-islands-set-2-using-disjoint-set/
 //https://leetcode.com/problems/number-of-islands/
 
-
+class Solution {
+public:
     class DisjointSet
     {
         public: 
         vector<int> parent; 
         vector<int>rank; 
-        int n; 
+       
         DisjointSet(int n)
         {
-            this->n = n; 
+           
             parent.resize(n); 
             rank.resize(n); 
             iota(parent.begin(), parent.end(), 0); 
@@ -44,6 +45,7 @@
             return false; //if x = y
         }
         
+      
     };
     int numIslands(vector<vector<char>>& grid) {
         int n = grid.size(); 
@@ -76,12 +78,11 @@
                 }
             }
         }
-        d.print(); 
         int ans = 0; 
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
                 if(grid[i][j] == '1' && d.find(i*m + j) == i*m + j){
-                    cout<<i<<" "<<j<<" "<<d.find(i*m+j)<<endl; 
+                    //cout<<i<<" "<<j<<" "<<d.find(i*m+j)<<endl; 
                     ans++; 
                 }
             }
@@ -89,3 +90,4 @@
         
         return ans; 
     }
+};
