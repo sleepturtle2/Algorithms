@@ -38,7 +38,11 @@ int findNonConflictingJobsLength(vector<Pair> jobs)
         }
 
         //increment L[i] since it ends at ith job 
+        L[i]++;
+        Max = max(Max, L[i]); 
     } 
+
+    return Max; 
 }
 
 int main()
