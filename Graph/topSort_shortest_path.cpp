@@ -1,3 +1,12 @@
+/*
+https://www.geeksforgeeks.org/shortest-path-for-directed-acyclic-graphs/#:~:text=We%20can%20calculate%20single%20source%20shortest%20distances%20in%20O(V,topological%20sorting%20of%20the%20graph.
+
+
+Shortest Path in Directed Acyclic Graph
+
+Given a Weighted Directed Acyclic Graph and a source vertex in the graph, find the shortest paths from given source to all other vertices.
+*/
+
 #include<bits/stdc++.h>
 #include "./graph_headers/weighted_DAG.h"
 using namespace std;
