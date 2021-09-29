@@ -61,7 +61,7 @@ void findSmallestRange(int arr[][N], int k)
         int arr_index = pq.top().second.first; 
         int el_arr_index = pq.top().second.second; 
 
-        cout<<min<<" "<<arr_index<<" "<<el_arr_index<<endl;
+        
         pq.pop(); 
 
         if(range > max - min)
@@ -73,13 +73,13 @@ void findSmallestRange(int arr[][N], int k)
 
         if(el_arr_index + 1 < N)
         {
-            pq.push({arr[arr_index][el_arr_index ], {arr_index, el_arr_index}}); 
-            max = max < arr[arr_index][el_arr_index] ? arr[arr_index][el_arr_index] : max; 
+            pq.push({arr[arr_index][el_arr_index + 1 ], {arr_index, el_arr_index + 1}}); 
+            max = max < arr[arr_index][el_arr_index + 1] ? arr[arr_index][el_arr_index + 1] : max; 
         }
         else 
         break; 
     }
-    cout<<range<<" "<<min<<" "<<max<<endl; 
+    cout<<"Range:"<<range<<"  ["<<start<<","<<end<<"]"<<endl; 
 }
 
 int main()
@@ -95,3 +95,11 @@ int main()
  
     return 0;
 }
+
+/*
+Complexity Analysis: 
+Time complexity : O(n * k *log k). 
+To find the maximum and minimum in an Min Heap of length k the time required is O(log k), and to traverse all the k arrays of length n (in worst case), the time complexity is O(n*k), then the total time complexity is O(n * k *log k).
+Space complexity: O(k). 
+The priority queue will store k elements so the space complexity os O(k)
+*/
