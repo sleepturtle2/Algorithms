@@ -63,6 +63,16 @@ struct Node* mergeKSortedLists(struct Node* arr[], int k)
     return dummy->next; 
 }
 
+void printList(struct Node* head)
+{
+    while(head != NULL)
+    {
+        cout<<head->data<<" "; 
+        head  = head->next; 
+    }
+    cout<<endl; 
+}
+
 int main()
 {
     int k = 3; // Number of linked lists
